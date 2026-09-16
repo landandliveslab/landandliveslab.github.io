@@ -2,9 +2,7 @@ backend:
   name: github
   repo: landandliveslab/landandliveslab.github.io
   branch: main
-  # Set this to your deployed sveltia-cms-auth Cloudflare Worker URL, e.g.
-  # base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
-  base_url: https://REPLACE-WITH-YOUR-OAUTH-WORKER-URL
+  base_url: https://sveltia-cms-auth.jeremy-allen248.workers.dev
 
 # No local-only dev flag is needed: when this admin UI is opened from a local
 # dev server (e.g. `bundle exec jekyll serve`) in a Chromium-based browser,
