@@ -1,0 +1,60 @@
+postdoctoral:
+  - name: Delphine Renard
+    degree: Ph.D.
+    year: "2015"
+
+graduate:
+  - name: Tara Bergeson
+    degree: Ph.D.
+    year: ""
+  - name: Lauren Nerfa
+    degree: M.Sc.
+    year: ""
+  - name: Libin T.L.
+    degree: M.Sc.
+    year: ""
+  - name: Emily Clark
+    degree: M.Sc.
+    year: "2016"
+  - name: Theraesa Coyle
+    degree: M.Sc.
+    year: "2016"
+  - name: Thomas Fox
+    degree: M.Sc.
+    year: "2015"
+  - name: Sylvia Wood
+    degree: Ph.D.
+    year: "2014"
+  - name: Martine Larouche
+    degree: M.Sc.
+    year: "2013"
+
+undergraduate:
+  - name: Riley Finn
+    year: ""
+  - name: Jennifer Norihiro
+    year: ""
+  - name: Caitlin Laidlaw
+    year: "2017"
+    note: Queen Elizabeth Fellow
+  - name: Hannah Crisp
+    year: "2016"
+    note: Queen Elizabeth Fellow
+  - name: Jane Chow
+    year: "2015"
+  - name: Gervais Lee
+    year: "2014"
+    note: UBC USRA
+  - name: Bronwen Tucker
+    year: "2014"
+  - name: David Chen
+    year: "2014"
+  - name: Cory Lesk
+    year: "2013"
+    note: NSERC USRA
+  - name: Matthew Park
+    year: "2012"
+  - name: Melissa Ward
+    year: "2011"
+  - name: Lesley Winterhalt
+    year: "2009"

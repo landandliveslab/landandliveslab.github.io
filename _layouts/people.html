@@ -1,0 +1,82 @@
+---
+layout: default
+---
+<section class="banner">
+  <div class="banner__inner"><h1>{{ page.banner_title }}</h1></div>
+</section>
+
+<div class="wrap">
+  <div class="card">
+    {% if content and content != "" %}{{ content }}{% endif %}
+
+    {% assign all_people = site.people | sort: "order" %}
+
+    {% assign pi = all_people | where: "role", "pi" %}
+    {% if pi.size > 0 %}
+    <div class="person-grid">
+      {% for person in pi %}{% include person-card.html person=person %}{% endfor %}
+    </div>
+    {% endif %}
+
+    {% assign postdocs = all_people | where: "role", "postdoc" %}
+    {% if postdocs.size > 0 %}
+    <h2>Postdoctoral Fellows</h2>
+    <div class="person-grid">
+      {% for person in postdocs %}{% include person-card.html person=person %}{% endfor %}
+    </div>
+    {% endif %}
+
+    {% assign phds = all_people | where: "role", "phd" %}
+    {% if phds.size > 0 %}
+    <h2>Doctoral Students</h2>
+    <div class="person-grid">
+      {% for person in phds %}{% include person-card.html person=person %}{% endfor %}
+    </div>
+    {% endif %}
+
+    {% assign mscs = all_people | where: "role", "msc" %}
+    {% if mscs.size > 0 %}
+    <h2>Masters Students</h2>
+    <div class="person-grid">
+      {% for person in mscs %}{% include person-card.html person=person %}{% endfor %}
+    </div>
+    {% endif %}
+
+    {% assign undergrads = all_people | where: "role", "undergrad" %}
+    {% if undergrads.size > 0 %}
+    <h2>Undergraduate Students</h2>
+    <div class="person-grid">
+      {% for person in undergrads %}{% include person-card.html person=person %}{% endfor %}
+    </div>
+    {% endif %}
+
+    <h2>Alumni</h2>
+
+    {% if site.data.alumni.postdoctoral.size > 0 %}
+    <h3>Postdoctoral</h3>
+    <ul class="alumni-list">
+      {% for a in site.data.alumni.postdoctoral %}
+      <li>{{ a.name }}{% if a.degree %}, {{ a.degree }}{% endif %}{% if a.year and a.year != "" %} ({{ a.year }}){% endif %}{% if a.note %} — {{ a.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if site.data.alumni.graduate.size > 0 %}
+    <h3>Graduate Students</h3>
+    <ul class="alumni-list">
+      {% for a in site.data.alumni.graduate %}
+      <li>{{ a.name }}{% if a.degree %}, {{ a.degree }}{% endif %}{% if a.year and a.year != "" %} ({{ a.year }}){% endif %}{% if a.note %} — {{ a.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if site.data.alumni.undergraduate.size > 0 %}
+    <h3>Undergraduate Students</h3>
+    <ul class="alumni-list">
+      {% for a in site.data.alumni.undergraduate %}
+      <li>{{ a.name }}{% if a.year and a.year != "" %} ({{ a.year }}){% endif %}{% if a.note %} — {{ a.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>

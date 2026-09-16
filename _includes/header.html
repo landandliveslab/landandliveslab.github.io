@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="brand__logo" src="{{ '/images/V1_LOGO_LAB_DGB.png' | relative_url }}" alt="{{ site.title }} logo">
+      <span class="brand__text">
+        <span class="brand__title">{{ site.title }}</span>
+        <span class="brand__tagline">{{ site.tagline }}</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        {% for item in site.nav %}
+        <li>
+          <a href="{{ item.url | relative_url }}"
+             {% if page.url == item.url %}class="is-active" aria-current="page"{% endif %}>
+             {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

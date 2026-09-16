@@ -1,0 +1,386 @@
+/* ===========================================================
+   Landscapes & Livelihoods Lab — main stylesheet
+   Boxed-card layout inspired by HTML5UP's "Minimaxing" template
+   (hand-rolled, no jQuery/skel dependency).
+   =========================================================== */
+
+:root {
+  --teal-dark: #14616f;
+  --teal: #1c7f92;
+  --teal-light: #2ea0b5;
+  --sage: #a7b79a;
+  --sage-dark: #7f9271;
+  --cream: #f4f2ea;
+  --ink: #29332f;
+  --ink-soft: #5a655f;
+  --paper: #ffffff;
+  --border: #e3e0d4;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(20, 40, 35, 0.12);
+  --max-width: 1100px;
+  --font-head: "Quicksand", "Trebuchet MS", sans-serif;
+  --font-body: "Karla", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--teal-dark);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ---------- header / nav ---------- */
+
+.site-header {
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal-light));
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+.brand:hover { text-decoration: none; }
+
+.brand__logo {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px;
+}
+
+.brand__text { display: flex; flex-direction: column; }
+.brand__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.brand__tagline {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-block;
+}
+.site-nav a:hover,
+.site-nav a.is-active {
+  background: rgba(255,255,255,0.18);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ---------- banner ---------- */
+
+.banner {
+  background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+  padding: 70px 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.banner--image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.banner--image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,40,35,0.35), rgba(20,40,35,0.55));
+}
+
+.banner__inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.banner h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0 0 12px;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+}
+
+/* ---------- layout / card ---------- */
+
+.wrap {
+  max-width: var(--max-width);
+  margin: -40px auto 60px;
+  padding: 0 24px;
+  position: relative;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 44px;
+}
+
+.card__title {
+  margin-top: 0;
+}
+
+.site-main { padding-top: 0; }
+
+/* ---------- buttons ---------- */
+
+.cta-row {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.button:hover {
+  background: var(--teal-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.button--ghost {
+  background: transparent;
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  padding: 10px 24px;
+}
+.button--ghost:hover {
+  background: var(--teal);
+  color: #fff;
+}
+
+/* ---------- people ---------- */
+
+.person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 24px 0 40px;
+}
+
+.person-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.person-card__photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.person-card__photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.person-card__name { margin: 0; font-size: 1.1rem; }
+.person-card__title {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.person-card__email { margin: 0 0 8px; font-size: 0.9rem; }
+.person-card__bio { font-size: 0.95rem; color: var(--ink); }
+.person-card__bio :first-child { margin-top: 0; }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.alumni-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 24px;
+}
+.alumni-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------- projects ---------- */
+
+.project-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+.project-list__item {
+  border-left: 4px solid var(--teal);
+  padding: 4px 0 4px 18px;
+}
+.project-list__item h3 { margin: 0 0 4px; }
+.project-list__lead {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- publications ---------- */
+
+.pub-list__year {
+  border-bottom: 2px solid var(--sage);
+  padding-bottom: 6px;
+  margin-top: 32px;
+}
+.pub-list ul {
+  padding-left: 20px;
+  margin: 12px 0 0;
+}
+.pub-list li {
+  margin-bottom: 14px;
+}
+.pub-list__doi {
+  font-size: 0.85rem;
+}
+.pub-list__note {
+  font-size: 0.85rem;
+  color: var(--sage-dark);
+  font-weight: 600;
+}
+
+/* ---------- contact ---------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+.contact-grid h3 { margin-top: 0; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.85);
+  padding: 30px 24px;
+}
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.site-footer a { color: rgba(255,255,255,0.85); }
+.site-footer__links { display: flex; gap: 16px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 760px) {
+  .site-header__inner { flex-wrap: wrap; }
+  .nav-toggle { display: flex; }
+  .site-nav { width: 100%; display: none; }
+  .site-nav.is-open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 2px; }
+  .card { padding: 28px 22px; }
+  .wrap { margin-top: -28px; }
+}

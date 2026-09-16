@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="banner">
+  <div class="banner__inner"><h1>{{ page.banner_title }}</h1></div>
+</section>
+
+<div class="wrap">
+  <div class="card">
+    {% if content and content != "" %}{{ content }}{% endif %}
+    <div class="contact-grid">
+      <div>
+        <h3>{{ page.contact_name }}</h3>
+        <p>
+          {% if page.email %}<a href="mailto:{{ page.email }}">{{ page.email }}</a><br>{% endif %}
+          {% if page.phone %}{{ page.phone }}<br>{% endif %}
+          {% if page.office %}{{ page.office }}{% endif %}
+        </p>
+      </div>
+      <div>
+        <h3>Lab Location</h3>
+        <p>{{ page.address | newline_to_br }}</p>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <p>
+          {% if page.instagram_url %}<a href="{{ page.instagram_url }}" target="_blank" rel="noopener">Instagram</a><br>{% endif %}
+          {% if page.twitter_url %}<a href="{{ page.twitter_url }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

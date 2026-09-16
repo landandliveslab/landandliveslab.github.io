@@ -1,0 +1,155 @@
+backend:
+  name: github
+  repo: landandliveslab/landandliveslab.github.io
+  branch: main
+  # Set this to your deployed sveltia-cms-auth Cloudflare Worker URL, e.g.
+  # base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-WORKER-URL
+
+# No local-only dev flag is needed: when this admin UI is opened from a local
+# dev server (e.g. `bundle exec jekyll serve`) in a Chromium-based browser,
+# Sveltia CMS offers a "Work with Local Repository" option automatically and
+# edits the working copy directly (no proxy process, no OAuth).
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://landandliveslab.github.io
+display_url: https://landandliveslab.github.io
+logo_url: /images/V1_LOGO_LAB_DGB.png
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home
+        file: index.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+          - { label: "Banner subtitle", name: banner_subtitle, widget: string }
+          - { label: "Banner image", name: banner_image, widget: image, default: "/images/lab_photo.jpg" }
+          - { label: "Intro text", name: body, widget: markdown, body: true }
+
+      - name: research
+        label: Research
+        file: research.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+          - { label: "Intro & research questions", name: body, widget: markdown, body: true }
+
+      - name: prospective_students
+        label: Prospective Students
+        file: prospective-students.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+          - { label: "Body", name: body, widget: markdown, body: true }
+
+      - name: publications_intro
+        label: Publications (intro text)
+        file: publications.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+          - { label: "Intro text", name: body, widget: markdown, body: true }
+
+      - name: people_intro
+        label: People (banner)
+        file: people.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+
+      - name: contact
+        label: Contact
+        file: contact.md
+        fields:
+          - { label: "Banner title", name: banner_title, widget: string }
+          - { label: "Contact name", name: contact_name, widget: string }
+          - { label: "Email", name: email, widget: string }
+          - { label: "Phone", name: phone, widget: string, required: false }
+          - { label: "Office", name: office, widget: string, required: false }
+          - { label: "Lab address", name: address, widget: text }
+          - { label: "Instagram URL", name: instagram_url, widget: string, required: false }
+          - { label: "Twitter URL", name: twitter_url, widget: string, required: false }
+
+  - name: people
+    label: Lab Members
+    folder: "_people"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - { label: "Name", name: name, widget: string }
+      - label: "Role"
+        name: role
+        widget: select
+        options:
+          - { label: "Principal Investigator", value: pi }
+          - { label: "Postdoctoral Fellow", value: postdoc }
+          - { label: "Doctoral Student", value: phd }
+          - { label: "Masters Student", value: msc }
+          - { label: "Undergraduate Student", value: undergrad }
+      - { label: "Title / role detail (shown on card)", name: title, widget: string, required: false }
+      - { label: "Email", name: email, widget: string, required: false }
+      - { label: "Photo", name: photo, widget: image, required: false }
+      - { label: "Sort order", name: order, widget: number, default: 50 }
+      - { label: "Bio", name: body, widget: markdown, body: true, required: false }
+
+  - name: projects
+    label: Current Projects
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Project title", name: title, widget: string }
+      - { label: "Lead researcher", name: lead, widget: string }
+      - { label: "Sort order", name: order, widget: number, default: 50 }
+      - { label: "Description (optional)", name: body, widget: markdown, body: true, required: false }
+
+  - name: publications
+    label: Publications List
+    files:
+      - name: publications
+        label: Publication List
+        file: _data/publications.yml
+        fields:
+          - label: "Publications"
+            name: items
+            widget: list
+            summary: "{{fields.year}} — {{fields.citation}}"
+            fields:
+              - { label: "Year", name: year, widget: string }
+              - { label: "Citation", name: citation, widget: text }
+              - { label: "DOI (optional)", name: doi, widget: string, required: false }
+              - { label: "Note (e.g. award, optional)", name: note, widget: string, required: false }
+
+  - name: alumni
+    label: Alumni
+    files:
+      - name: alumni
+        label: Alumni List
+        file: _data/alumni.yml
+        fields:
+          - label: "Postdoctoral"
+            name: postdoctoral
+            widget: list
+            fields:
+              - { label: "Name", name: name, widget: string }
+              - { label: "Degree", name: degree, widget: string, required: false }
+              - { label: "Year", name: year, widget: string, required: false }
+              - { label: "Note", name: note, widget: string, required: false }
+          - label: "Graduate Students"
+            name: graduate
+            widget: list
+            fields:
+              - { label: "Name", name: name, widget: string }
+              - { label: "Degree", name: degree, widget: string, required: false }
+              - { label: "Year", name: year, widget: string, required: false }
+              - { label: "Note", name: note, widget: string, required: false }
+          - label: "Undergraduate Students"
+            name: undergraduate
+            widget: list
+            fields:
+              - { label: "Name", name: name, widget: string }
+              - { label: "Year", name: year, widget: string, required: false }
+              - { label: "Note", name: note, widget: string, required: false }

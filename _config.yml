@@ -1,0 +1,50 @@
+title: Landscapes & Livelihoods Lab
+tagline: The Rhemtulla Lab @ UBC
+description: >-
+  People have shaped landscapes for millennia for food, shelter, and other needs.
+  As land-use change has escalated, it has become a key driver of biodiversity loss,
+  climate change, and decline in other ecosystem services. Our lab studies how to
+  maintain ecosystem function while providing for sustainable, equitable livelihoods.
+url: "https://landandliveslab.github.io"
+baseurl: ""
+
+department: Dept. of Forest & Conservation Sciences
+institution: University of British Columbia
+
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: People
+    url: /people/
+  - title: Prospective Students
+    url: /prospective-students/
+  - title: Publications
+    url: /publications/
+  - title: Contact
+    url: /contact/
+
+collections:
+  people:
+    output: false
+  projects:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

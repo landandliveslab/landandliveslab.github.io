@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="banner">
+  <div class="banner__inner"><h1>{{ page.banner_title }}</h1></div>
+</section>
+
+<div class="wrap">
+  <div class="card">
+    {{ content }}
+
+    <h2>Current Projects</h2>
+    <div class="project-list">
+      {% assign projects = site.projects | sort: "order" %}
+      {% for project in projects %}
+      <div class="project-list__item">
+        <h3>{{ project.title }}</h3>
+        <p class="project-list__lead">{{ project.lead }}</p>
+        {% if project.content and project.content != "" %}
+          {{ project.content | markdownify }}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<section class="banner">
+  <div class="banner__inner"><h1>{{ page.banner_title }}</h1></div>
+</section>
+
+<div class="wrap">
+  <div class="card">
+    {{ content }}
+
+    {% assign grouped = site.data.publications.items | group_by: "year" | sort: "name" | reverse %}
+    <div class="pub-list">
+      {% for group in grouped %}
+      <h3 class="pub-list__year">{{ group.name }}</h3>
+      <ul>
+        {% for pub in group.items %}
+        <li>
+          {{ pub.citation | markdownify }}
+          {% if pub.doi %}<a class="pub-list__doi" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">doi:{{ pub.doi }}</a>{% endif %}
+          {% if pub.note %}<div class="pub-list__note">{{ pub.note }}</div>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>

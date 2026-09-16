@@ -1,0 +1,27 @@
+{% comment %}
+  Renders one lab-member card. Expects `person` (a doc from the people collection).
+  Works whether or not `person.photo` is set.
+{% endcomment %}
+<article class="person-card">
+  {% if person.photo %}
+  <img class="person-card__photo" src="{{ person.photo | relative_url }}" alt="Photo of {{ person.name }}">
+  {% else %}
+  <div class="person-card__photo person-card__photo--placeholder" aria-hidden="true">
+    {{ person.name | slice: 0 }}
+  </div>
+  {% endif %}
+  <div class="person-card__body">
+    <h3 class="person-card__name">{{ person.name }}</h3>
+    {% if person.title %}<p class="person-card__title">{{ person.title }}</p>{% endif %}
+    {% if person.email %}
+    <p class="person-card__email">
+      <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+    </p>
+    {% endif %}
+    {% if person.content and person.content != "" %}
+    <div class="person-card__bio">
+      {{ person.content | markdownify }}
+    </div>
+    {% endif %}
+  </div>
+</article>
