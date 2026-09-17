@@ -4,6 +4,8 @@ title: Ph.D. Student (2019 - present)
 email: pabloglz@ubc.mail.ca
 order: 6
 role: phd
+status: alumni
+topics: "Agroecology, Restoration, Mexico"
 ---
 As a multidisciplinary researcher, my interests range from the abstract knowledge and methods of complexity science, systems thinking, and mathematical models to the particularities of functional ecology, agroecology, and rural development. During my PhD I am exploring who the actors doing restoration in Latin America are and what their respective drivers are. My fieldwork takes place in southern coastal Mexico.
 

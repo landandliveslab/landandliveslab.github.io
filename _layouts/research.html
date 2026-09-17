@@ -7,20 +7,61 @@ layout: default
 
 <div class="wrap">
   <div class="card">
+    {% if page.lead %}<p class="card__lead">{{ page.lead }}</p>{% endif %}
     {{ content }}
 
-    <h2>Current Projects</h2>
-    <div class="project-list">
-      {% assign projects = site.projects | sort: "order" %}
-      {% for project in projects %}
-      <div class="project-list__item">
-        <h3>{{ project.title }}</h3>
-        <p class="project-list__lead">{{ project.lead }}</p>
-        {% if project.content and project.content != "" %}
-          {{ project.content | markdownify }}
+    {% assign themes = "forest-restoration|historical-legacies|biodiversity-ecosystem-services" | split: "|" %}
+    {% assign theme_names = "Forest Landscape Restoration|Historical Landscapes & Legacies|Biodiversity & Ecosystem Services" | split: "|" %}
+    {% assign all_projects = site.projects | sort: "order" %}
+
+    <div class="theme-layout">
+      <nav class="theme-nav" aria-label="Research themes">
+        <ul>
+          {% for theme in themes %}
+          <li><a href="#theme-{{ theme }}" data-theme-link="theme-{{ theme }}">{{ theme_names[forloop.index0] }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="theme-sections">
+        {% for theme in themes %}
+        {% assign theme_projects = all_projects | where: "theme", theme %}
+        {% if theme_projects.size > 0 %}
+        <section id="theme-{{ theme }}" class="theme-section">
+          <h2>{{ theme_names[forloop.index0] }}</h2>
+          <div class="project-list">
+            {% for project in theme_projects %}
+            <div class="project-list__item">
+              <h3>{{ project.title }}</h3>
+              <p class="project-list__lead">{{ project.lead }}</p>
+              {% if project.content and project.content != "" %}
+                {{ project.content | markdownify }}
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+        {% endfor %}
+
+        {% assign untagged_projects = all_projects | where_exp: "p", "p.theme == nil" %}
+        {% if untagged_projects.size > 0 %}
+        <section id="theme-other" class="theme-section">
+          <h2>Other Projects</h2>
+          <div class="project-list">
+            {% for project in untagged_projects %}
+            <div class="project-list__item">
+              <h3>{{ project.title }}</h3>
+              <p class="project-list__lead">{{ project.lead }}</p>
+              {% if project.content and project.content != "" %}
+                {{ project.content | markdownify }}
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </section>
         {% endif %}
       </div>
-      {% endfor %}
     </div>
   </div>
 </div>

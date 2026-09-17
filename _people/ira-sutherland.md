@@ -4,6 +4,8 @@ title: Ph.D. Candidate (2018 - present)
 email: ira.sutherland@ubc.ca
 order: 5
 role: phd
+status: alumni
+topics: "Ecosystem Services, Historical Ecology, British Columbia"
 ---
 **Spatial and temporal dynamics of ecosystem services in British Columbia**
 

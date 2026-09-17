@@ -30,11 +30,11 @@ collections:
           - { label: "Intro text", name: body, widget: markdown, body: true }
 
       - name: research
-        label: Research
+        label: What we do
         file: research.md
         fields:
           - { label: "Banner title", name: banner_title, widget: string }
-          - { label: "Intro & research questions", name: body, widget: markdown, body: true }
+          - { label: "Intro text", name: body, widget: markdown, body: true }
 
       - name: prospective_students
         label: Prospective Students
@@ -51,7 +51,7 @@ collections:
           - { label: "Intro text", name: body, widget: markdown, body: true }
 
       - name: people_intro
-        label: People (banner)
+        label: Who we are (banner)
         file: people.md
         fields:
           - { label: "Banner title", name: banner_title, widget: string }
@@ -86,11 +86,26 @@ collections:
           - { label: "Doctoral Student", value: phd }
           - { label: "Masters Student", value: msc }
           - { label: "Undergraduate Student", value: undergrad }
+      - label: "Status"
+        name: status
+        widget: select
+        default: current
+        options:
+          - { label: "Current lab member", value: current }
+          - { label: "Alumni", value: alumni }
       - { label: "Title / role detail (shown on card)", name: title, widget: string, required: false }
       - { label: "Email", name: email, widget: string, required: false }
       - { label: "Photo", name: photo, widget: image, required: false }
+      - label: "Fields of interest"
+        name: topics
+        widget: string
+        required: false
+        hint: "Comma-separated keywords, e.g. Sustainable Development, Social Inequality, Spatial Data Analysis"
+      - { label: "Personal website URL", name: personal_url, widget: string, required: false }
+      - { label: "GitHub URL", name: github_url, widget: string, required: false }
+      - { label: "Google Scholar URL", name: scholar_url, widget: string, required: false }
       - { label: "Sort order", name: order, widget: number, default: 50 }
-      - { label: "Bio", name: body, widget: markdown, body: true, required: false }
+      - { label: "Full bio (shown on their own page)", name: body, widget: markdown, body: true, required: false }
 
   - name: projects
     label: Current Projects
@@ -101,6 +116,14 @@ collections:
     fields:
       - { label: "Project title", name: title, widget: string }
       - { label: "Lead researcher", name: lead, widget: string }
+      - label: "Theme"
+        name: theme
+        widget: select
+        required: false
+        options:
+          - { label: "Forest Landscape Restoration", value: forest-restoration }
+          - { label: "Historical Landscapes & Legacies", value: historical-legacies }
+          - { label: "Biodiversity & Ecosystem Services", value: biodiversity-ecosystem-services }
       - { label: "Sort order", name: order, widget: number, default: 50 }
       - { label: "Description (optional)", name: body, widget: markdown, body: true, required: false }
 
@@ -119,6 +142,9 @@ collections:
               - { label: "Year", name: year, widget: string }
               - { label: "Citation", name: citation, widget: text }
               - { label: "DOI (optional)", name: doi, widget: string, required: false }
+              - { label: "Publisher page URL (optional)", name: publisher_url, widget: string, required: false }
+              - { label: "PDF URL (optional, post-embargo only)", name: pdf_url, widget: string, required: false }
+              - { label: "Open access?", name: open_access, widget: boolean, required: false, default: false }
               - { label: "Note (e.g. award, optional)", name: note, widget: string, required: false }
 
   - name: alumni
@@ -151,3 +177,18 @@ collections:
               - { label: "Name", name: name, widget: string }
               - { label: "Year", name: year, widget: string, required: false }
               - { label: "Note", name: note, widget: string, required: false }
+
+  - name: regions
+    label: Regions Photo Panel
+    files:
+      - name: regions
+        label: Regions Our Students Have Worked In
+        file: _data/regions.yml
+        fields:
+          - label: "Regions"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Region name", name: name, widget: string }
+              - { label: "Photo", name: image, widget: image }

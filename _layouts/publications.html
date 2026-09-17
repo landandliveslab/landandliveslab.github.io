@@ -15,9 +15,14 @@ layout: default
       <h3 class="pub-list__year">{{ group.name }}</h3>
       <ul>
         {% for pub in group.items %}
+        {% capture citation_html %}{{ pub.citation | markdownify | strip }}{% endcapture %}
+        {% assign citation_html = citation_html | remove_first: "<p>" | replace: "</p>", "" %}
         <li>
-          {{ pub.citation | markdownify }}
-          {% if pub.doi %}<a class="pub-list__doi" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">doi:{{ pub.doi }}</a>{% endif %}
+          <p>{{ citation_html }}<span class="pub-list__links">
+            {% if pub.doi %}<a class="pub-list__doi" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+            {% if pub.publisher_url %}<a class="pub-list__link" href="{{ pub.publisher_url }}" target="_blank" rel="noopener">Publisher</a>{% endif %}
+            {% if pub.pdf_url %}<a class="pub-list__link pub-list__link--pdf" href="{{ pub.pdf_url }}" target="_blank" rel="noopener">PDF{% if pub.open_access %} (open access){% endif %}</a>{% endif %}
+          </span></p>
           {% if pub.note %}<div class="pub-list__note">{{ pub.note }}</div>{% endif %}
         </li>
         {% endfor %}

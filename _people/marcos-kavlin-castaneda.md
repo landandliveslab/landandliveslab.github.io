@@ -4,6 +4,8 @@ title: M.Sc. Student (2019 - present)
 email: kavlinmarcos@gmail.com
 order: 8
 role: msc
+status: alumni
+topics: "Remote Sensing, Forest Regrowth, Google Earth Engine"
 ---
 I am interested in the many forms of ecological restoration, and in particular large-scale restoration across landscapes. Having briefly worked in sustainable development projects, wildfire research, and the forestry industry, I have become greatly interested in the impact the decisions we make as communities can have on the landscape around us.
 

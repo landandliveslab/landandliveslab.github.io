@@ -13,15 +13,19 @@
   <div class="person-card__body">
     <h3 class="person-card__name">{{ person.name }}</h3>
     {% if person.title %}<p class="person-card__title">{{ person.title }}</p>{% endif %}
-    {% if person.email %}
-    <p class="person-card__email">
-      <a href="mailto:{{ person.email }}">{{ person.email }}</a>
-    </p>
+
+    {% if person.topics %}
+    <p class="person-card__topics">Fields of Interest: {{ person.topics }}</p>
     {% endif %}
-    {% if person.content and person.content != "" %}
-    <div class="person-card__bio">
-      {{ person.content | markdownify }}
+
+    {% if person.personal_url or person.github_url or person.scholar_url %}
+    <div class="person-links person-links--card">
+      {% if person.personal_url %}<a class="person-links__item" href="{{ person.personal_url }}" target="_blank" rel="noopener">Website</a>{% endif %}
+      {% if person.github_url %}<a class="person-links__item" href="{{ person.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+      {% if person.scholar_url %}<a class="person-links__item" href="{{ person.scholar_url }}" target="_blank" rel="noopener">Scholar</a>{% endif %}
     </div>
     {% endif %}
+
+    <a class="person-card__bio-link" href="{{ person.url | relative_url }}">Read full bio &rarr;</a>
   </div>
 </article>

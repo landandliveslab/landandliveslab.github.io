@@ -4,6 +4,8 @@ title: Ph.D. Candidate (2017 - present)
 email: dayana.barragan@ubc.ca
 order: 3
 role: phd
+status: alumni
+topics: "Forest Restoration Planning, Ecuador, Remote Sensing"
 ---
 **Planning the forest of the future**
 

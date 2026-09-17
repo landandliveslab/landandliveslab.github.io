@@ -3,6 +3,8 @@ name: Juliana Kaufmanis
 title: M.Sc. Student (2019 - present)
 order: 9
 role: msc
+status: alumni
+topics: "Forest Landscape Restoration, Ecological Restoration"
 ---
 I am interested in ecological restoration and the myriad forms that restoration can take. Coming from past research experiences in freshwater and riparian ecology, as well as a growing season farming and learning at the UBC Farm Centre for Sustainable Food Systems, I have a deep interest in how land uses and social processes interact as part of a larger, mosaiced system.
 

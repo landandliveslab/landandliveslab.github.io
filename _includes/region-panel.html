@@ -1,0 +1,13 @@
+{% comment %}
+  Hover-reveal panel of regions, recreated from the lab's prior Weebly site.
+  Expects site.data.regions.items, each with `name` and `image`.
+{% endcomment %}
+{% if site.data.regions.items.size > 0 %}
+<div class="region-panel">
+  {% for region in site.data.regions.items %}
+  <a class="region-panel__item" style="background-image: url('{{ region.image | relative_url }}');" tabindex="0">
+    <span class="region-panel__label">{{ region.name }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}

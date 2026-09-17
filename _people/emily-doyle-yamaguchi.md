@@ -4,6 +4,8 @@ title: M.Sc. Student (2018 - present), Forester-in-Training
 email: emily.doyle-yamaguchi@ubc.ca
 order: 7
 role: msc
+status: alumni
+topics: "Traditional Ecological Knowledge, Habitat Mapping"
 ---
 Pine mushrooms are among several wild mushroom species that form part of the traditional diet of Indigenous peoples in British Columbia, as well as generate significant economic benefits as non-timber forest products. As a mycorrhizal species that relies on a live tree host, however, *Tricholoma murrillianum* (pine mushroom) is at odds with timber harvesting — giving rise to conflicts over forest management. Increasing recognition of Indigenous rights to self-determination, including the stewardship of their land, means that this is not simply a matter of mushrooms versus timber, but of who gets to decide.
 

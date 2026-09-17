@@ -1,6 +1,6 @@
 ---
 layout: people
-title: People
-banner_title: Lab Members
+title: Who we are
+banner_title: Who we are
 permalink: /people/
 ---

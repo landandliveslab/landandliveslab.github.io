@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<div class="wrap">
+  <div class="card">
+    <a class="back-link" href="{{ '/people/' | relative_url }}">&larr; Back to Who we are</a>
+
+    <article class="person-page">
+      {% if page.photo %}
+      <img class="person-page__photo" src="{{ page.photo | relative_url }}" alt="Photo of {{ page.name }}">
+      {% else %}
+      <div class="person-page__photo person-page__photo--placeholder" aria-hidden="true">{{ page.name | slice: 0 }}</div>
+      {% endif %}
+
+      <div class="person-page__header">
+        <h1 class="person-page__name">{{ page.name }}</h1>
+        {% if page.title %}<p class="person-page__title">{{ page.title }}</p>{% endif %}
+
+        {% if page.topics %}
+        <p class="person-page__topics">Fields of Interest: {{ page.topics }}</p>
+        {% endif %}
+
+        {% if page.email or page.personal_url or page.github_url or page.scholar_url %}
+        <div class="person-links">
+          {% if page.email %}<a class="person-links__item" href="mailto:{{ page.email }}">Email</a>{% endif %}
+          {% if page.personal_url %}<a class="person-links__item" href="{{ page.personal_url }}" target="_blank" rel="noopener">Website</a>{% endif %}
+          {% if page.github_url %}<a class="person-links__item" href="{{ page.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if page.scholar_url %}<a class="person-links__item" href="{{ page.scholar_url }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if content and content != "" %}
+      <div class="person-page__bio">
+        {{ content }}
+      </div>
+      {% endif %}
+    </article>
+  </div>
+</div>

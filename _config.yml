@@ -14,9 +14,9 @@ institution: University of British Columbia
 nav:
   - title: Home
     url: /
-  - title: Research
+  - title: What we do
     url: /research/
-  - title: People
+  - title: Who we are
     url: /people/
   - title: Prospective Students
     url: /prospective-students/
@@ -27,7 +27,8 @@ nav:
 
 collections:
   people:
-    output: false
+    output: true
+    permalink: /people/:slug/
   projects:
     output: false
 
@@ -37,6 +38,11 @@ defaults:
       type: pages
     values:
       layout: page
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: person
 
 plugins:
   - jekyll-seo-tag

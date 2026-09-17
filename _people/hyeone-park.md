@@ -4,6 +4,8 @@ title: Ph.D. Candidate (2017 - present)
 email: soph.park@yahoo.ca
 order: 4
 role: phd
+status: alumni
+topics: "Urban Food Forestry, Community Resilience"
 ---
 **Urban Food Forests & Community Resilience**
 

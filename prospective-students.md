@@ -13,4 +13,8 @@ We are always looking for new students at all levels to join the lab. Current pr
 
 Students in the lab typically have a strong background in the natural sciences (ecology, geography, or forestry) with an interest in human dimensions. Research approaches could include ecological fieldwork, household surveys, mapping and spatial analysis, historical reconstruction, or some combination of these. Students should have strong analytical skills; experience or interest in interdisciplinary approaches is an asset. Experience in the tropics, ability to speak foreign languages, and evidence of grit and resilience in the face of unanticipated challenges is an advantage, especially for those who want to do fieldwork abroad.
 
+## Regions our students have worked in
+
+{% include region-panel.html %}
+
 We are currently applying for grants to support these projects but do not yet have funding for student stipends. We welcome inquiries about these or other opportunities in the lab — please send a brief email to [jeanine.rhemtulla@ubc.ca](mailto:jeanine.rhemtulla@ubc.ca) outlining your background experience, research interests, and why you want to join the lab. Living and studying in Vancouver is very expensive (especially for international students), so please also give some thought as to how you might fund your degree. We look forward to hearing from you!
