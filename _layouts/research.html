@@ -10,6 +10,14 @@ layout: default
     {% if page.lead %}<p class="card__lead">{{ page.lead }}</p>{% endif %}
     {{ content }}
 
+    <div class="project-map-wrap">
+      <div id="project-map"></div>
+      <div class="project-map__legend">
+        <span><span class="project-map__dot project-map__dot--current"></span> Current research sites</span>
+        <span><span class="project-map__dot project-map__dot--past"></span> Past projects</span>
+      </div>
+    </div>
+
     {% assign themes = "forest-restoration|historical-legacies|biodiversity-ecosystem-services" | split: "|" %}
     {% assign theme_names = "Forest Landscape Restoration|Historical Landscapes & Legacies|Biodiversity & Ecosystem Services" | split: "|" %}
     {% assign all_projects = site.projects | sort: "order" %}

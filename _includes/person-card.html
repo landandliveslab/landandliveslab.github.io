@@ -18,11 +18,14 @@
     <p class="person-card__topics">Fields of Interest: {{ person.topics }}</p>
     {% endif %}
 
-    {% if person.personal_url or person.github_url or person.scholar_url %}
+    {% if person.personal_url or person.github_url or person.scholar_url or person.instagram_url or person.twitter_url or person.linkedin_url %}
     <div class="person-links person-links--card">
-      {% if person.personal_url %}<a class="person-links__item" href="{{ person.personal_url }}" target="_blank" rel="noopener">Website</a>{% endif %}
-      {% if person.github_url %}<a class="person-links__item" href="{{ person.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
-      {% if person.scholar_url %}<a class="person-links__item" href="{{ person.scholar_url }}" target="_blank" rel="noopener">Scholar</a>{% endif %}
+      {% if person.personal_url %}<a class="person-links__item" href="{{ person.personal_url }}" target="_blank" rel="noopener" aria-label="Website" title="Website">{% include icon.html name="website" %}</a>{% endif %}
+      {% if person.github_url %}<a class="person-links__item" href="{{ person.github_url }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{% include icon.html name="github" %}</a>{% endif %}
+      {% if person.scholar_url %}<a class="person-links__item" href="{{ person.scholar_url }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">{% include icon.html name="scholar" %}</a>{% endif %}
+      {% if person.instagram_url %}<a class="person-links__item" href="{{ person.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">{% include icon.html name="instagram" %}</a>{% endif %}
+      {% if person.twitter_url %}<a class="person-links__item" href="{{ person.twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">{% include icon.html name="twitter" %}</a>{% endif %}
+      {% if person.linkedin_url %}<a class="person-links__item" href="{{ person.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{% include icon.html name="linkedin" %}</a>{% endif %}
     </div>
     {% endif %}
 

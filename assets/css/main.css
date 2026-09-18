@@ -197,6 +197,10 @@ a:hover { text-decoration: underline; }
   position: relative;
 }
 
+.wrap--no-banner {
+  margin-top: 40px;
+}
+
 .card {
   background: var(--paper);
   border-radius: var(--radius);
@@ -423,19 +427,6 @@ a:hover { text-decoration: underline; }
 
 /* ---------- footer ---------- */
 
-.site-footer {
-  background: var(--ink);
-  color: rgba(255,255,255,0.85);
-}
-.site-footer__inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 30px 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
 .site-footer a { color: rgba(255,255,255,0.85); }
 .site-footer__links { display: flex; gap: 20px; flex-wrap: wrap; }
 
@@ -463,6 +454,46 @@ a:hover { text-decoration: underline; }
 .site-footer__banner .site-footer__links a:hover {
   text-decoration: underline;
 }
+
+/* ---------- project map ---------- */
+
+.project-map-wrap {
+  margin: 20px 0 32px;
+}
+
+#project-map {
+  height: 420px;
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.project-map__legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.project-map__dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.project-map__dot--current { background: var(--forestry-green); }
+.project-map__dot--past { background: var(--teal-light); }
+
+.project-map__marker {
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.project-map__marker--current { background: var(--forestry-green); }
+.project-map__marker--past { background: var(--teal-light); }
 
 /* ---------- research themes ---------- */
 
@@ -552,13 +583,16 @@ a:hover { text-decoration: underline; }
   margin: 8px 0;
 }
 .person-links__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
   border: 1px solid var(--teal);
   color: var(--teal);
-  border-radius: 999px;
-  padding: 4px 12px;
-  font-size: 0.82rem;
-  font-weight: 600;
+  border-radius: 50%;
 }
+.person-links__item svg { display: block; }
 .person-links__item:hover {
   background: var(--teal);
   color: #fff;
@@ -686,4 +720,5 @@ a:hover { text-decoration: underline; }
 @media (max-width: 760px) {
   .card { padding: 28px 22px; }
   .wrap { margin-top: -28px; }
+  .wrap--no-banner { margin-top: 28px; }
 }

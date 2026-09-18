@@ -1,0 +1,39 @@
+current:
+  - name: Tajikistan
+    lat: 38.86
+    lng: 71.28
+  - name: Oaxaca, Mexico
+    lat: 17.06
+    lng: -96.73
+  - name: Fraser Valley, BC
+    lat: 49.15
+    lng: -122.15
+
+past:
+  - name: 150 Years of Landscape Change in BC
+    lat: 49.28
+    lng: -123.12
+  - name: Biodiversity in Rice Paddies - Kerala, India
+    lat: 10.85
+    lng: 76.27
+  - name: Climate Resilient Restoration - Ecuador
+    lat: -1.83
+    lng: -78.18
+  - name: Ecosystem Service Flows Across BC
+    lat: 53.73
+    lng: -127.65
+  - name: Forest Landscape Restoration and Livelihoods - Malawi
+    lat: -13.25
+    lng: 34.30
+  - name: Mapping Forest Regrowth Trajectories - Ecuador & Bolivia
+    lat: -3.5
+    lng: -71.0
+  - name: Pine Mushroom Habitat Mapping with Lil'wat Nation
+    lat: 50.32
+    lng: -122.80
+  - name: Repeat Photography in Jasper National Park
+    lat: 52.87
+    lng: -118.08
+  - name: Smallholder Farmers & Restoration in Sembrando Vida, Mexico
+    lat: 19.43
+    lng: -99.13

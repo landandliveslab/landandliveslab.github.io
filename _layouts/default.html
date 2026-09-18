@@ -14,6 +14,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="icon" href="{{ '/images/V1_LOGO_LAB_DGB.png' | relative_url }}">
+  {% if page.layout == "research" %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  {% endif %}
 </head>
 <body>
   {% include header.html %}
@@ -22,5 +25,10 @@
   </main>
   {% include footer.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  {% if page.layout == "research" %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>window.mapSites = {{ site.data.map_sites | jsonify }};</script>
+  <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+  {% endif %}
 </body>
 </html>
