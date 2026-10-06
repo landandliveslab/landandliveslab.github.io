@@ -2,7 +2,7 @@ Welcome to the lab website!
 
 Below are some resources to help you get started. 
 
-The live website lives at: landandliveslab.github.io
+The live website lives at: [landandliveslab.github.io](https://landandliveslab.github.io/)
 
 To edit it, you will have to do two things:
 1. Join the lab GitHub organisation, please send the administrator your GitHub usernames and they will add you. The lab Github organisation lives here: 
