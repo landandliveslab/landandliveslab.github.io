@@ -20,15 +20,19 @@ layout: default
         <p class="person-page__topics">Fields of Interest: {{ page.topics }}</p>
         {% endif %}
 
-        {% if page.email or page.personal_url or page.github_url or page.scholar_url or page.instagram_url or page.twitter_url or page.linkedin_url %}
+        {% capture person_links %}
+          {% if page.email and page.email != "" %}<a class="person-links__item" href="mailto:{{ page.email }}" aria-label="Email" title="Email">{% include icon.html name="email" %}</a>{% endif %}
+          {% if page.personal_url and page.personal_url != "" %}<a class="person-links__item" href="{{ page.personal_url }}" target="_blank" rel="noopener" aria-label="Website" title="Website">{% include icon.html name="website" %}</a>{% endif %}
+          {% if page.github_url and page.github_url != "" %}<a class="person-links__item" href="{{ page.github_url }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{% include icon.html name="github" %}</a>{% endif %}
+          {% if page.scholar_url and page.scholar_url != "" %}<a class="person-links__item" href="{{ page.scholar_url }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">{% include icon.html name="scholar" %}</a>{% endif %}
+          {% if page.instagram_url and page.instagram_url != "" %}<a class="person-links__item" href="{{ page.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">{% include icon.html name="instagram" %}</a>{% endif %}
+          {% if page.twitter_url and page.twitter_url != "" %}<a class="person-links__item" href="{{ page.twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">{% include icon.html name="twitter" %}</a>{% endif %}
+          {% if page.linkedin_url and page.linkedin_url != "" %}<a class="person-links__item" href="{{ page.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{% include icon.html name="linkedin" %}</a>{% endif %}
+        {% endcapture %}
+        {% assign person_links = person_links | strip %}
+        {% if person_links != "" %}
         <div class="person-links">
-          {% if page.email %}<a class="person-links__item" href="mailto:{{ page.email }}" aria-label="Email" title="Email">{% include icon.html name="email" %}</a>{% endif %}
-          {% if page.personal_url %}<a class="person-links__item" href="{{ page.personal_url }}" target="_blank" rel="noopener" aria-label="Website" title="Website">{% include icon.html name="website" %}</a>{% endif %}
-          {% if page.github_url %}<a class="person-links__item" href="{{ page.github_url }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{% include icon.html name="github" %}</a>{% endif %}
-          {% if page.scholar_url %}<a class="person-links__item" href="{{ page.scholar_url }}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">{% include icon.html name="scholar" %}</a>{% endif %}
-          {% if page.instagram_url %}<a class="person-links__item" href="{{ page.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">{% include icon.html name="instagram" %}</a>{% endif %}
-          {% if page.twitter_url %}<a class="person-links__item" href="{{ page.twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter" title="Twitter">{% include icon.html name="twitter" %}</a>{% endif %}
-          {% if page.linkedin_url %}<a class="person-links__item" href="{{ page.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{% include icon.html name="linkedin" %}</a>{% endif %}
+          {{ person_links }}
         </div>
         {% endif %}
       </div>
