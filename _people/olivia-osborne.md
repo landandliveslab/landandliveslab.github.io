@@ -6,7 +6,7 @@ title: MSc Student
 email: olivia.osborne@ubc.ca
 photo: /images/uploads/IMG_0086.jpeg
 topics: Botany, Plant Ecology, Restoration
-personal_url: ''
+personal_url: https://percs.landfood.ubc.ca/assessing-plant-diversity-and-structure-in-hedgerows/
 github_url: ''
 scholar_url: ''
 order: 50
